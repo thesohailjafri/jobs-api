@@ -1,0 +1,429 @@
+openapi: 3.0.0
+
+info:
+
+  title: Jobs API
+
+  description: Jobs API with authentication middleware and Job application CRUD operations.
+
+  contact:
+
+    name: Sohail
+
+    url: https://github.com/thesohailjafri
+
+    email: thesohailjafri@gmail.com
+
+  version: '1.0'
+
+servers:
+
+- url: https://job-api-by-sohail.herokuapp.com/api/v1
+
+  variables: {}
+
+paths:
+
+  /auth/login:
+
+    post:
+
+      tags:
+
+      - Authentication
+
+      summary: login
+
+      operationId: login
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/loginrequest'
+
+            example:
+
+              password: '1234'
+
+              email: sohail12@fm.com
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security: []
+
+  /auth/register:
+
+    post:
+
+      tags:
+
+      - Authentication
+
+      summary: register
+
+      operationId: register
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/registerrequest'
+
+            example:
+
+              name: sohail
+
+              password: '1234'
+
+              email: sohail12@fm.com
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+      security: []
+
+  /job:
+
+    get:
+
+      tags:
+
+      - Jobs
+
+      summary: get all jobs
+
+      operationId: getalljobs
+
+      parameters: []
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+    post:
+
+      tags:
+
+      - Jobs
+
+      summary: create a job
+
+      operationId: createajob
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/createajobrequest'
+
+            example:
+
+              title: UI devloper
+
+              description: create ui for frontend application
+
+              company: getgo
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+  /job/{id}:
+    parameters:
+      - in: path
+        name: id
+        type: String
+        required: true
+        description: The job ID.
+
+    patch:
+
+      tags:
+
+      - Jobs
+
+      summary: update a job
+
+      operationId: updateajob
+
+      parameters: []
+
+      requestBody:
+
+        description: ''
+
+        content:
+
+          application/json:
+
+            schema:
+
+              $ref: '#/components/schemas/updateajobrequest'
+
+            example:
+
+              status: seen
+
+        required: true
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+    delete:
+
+      tags:
+
+      - Jobs
+
+      summary: delete a job
+
+      operationId: deleteajob
+
+      parameters: []
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+    get:
+
+      tags:
+
+      - Jobs
+
+      summary: get a job using id
+
+      operationId: getajobusingid
+
+      parameters: []
+
+      responses:
+
+        '200':
+
+          description: ''
+
+          headers: {}
+
+      deprecated: false
+
+components:
+
+  schemas:
+
+    loginrequest:
+
+      title: loginrequest
+
+      required:
+
+      - password
+
+      - email
+
+      type: object
+
+      properties:
+
+        password:
+
+          type: string
+
+        email:
+
+          type: string
+
+      example:
+
+        password: '1234'
+
+        email: sohail12@fm.com
+
+    registerrequest:
+
+      title: registerrequest
+
+      required:
+
+      - name
+
+      - password
+
+      - email
+
+      type: object
+
+      properties:
+
+        name:
+
+          type: string
+
+        password:
+
+          type: string
+
+        email:
+
+          type: string
+
+      example:
+
+        name: sohail
+
+        password: '1234'
+
+        email: sohail12@fm.com
+
+    createajobrequest:
+
+      title: createajobrequest
+
+      required:
+
+      - title
+
+      - description
+
+      - company
+
+      type: object
+
+      properties:
+
+        title:
+
+          type: string
+
+        description:
+
+          type: string
+
+        company:
+
+          type: string
+
+      example:
+
+        title: UI devloper
+
+        description: create ui for frontend application
+
+        company: getgo
+
+    updateajobrequest:
+
+      title: updateajobrequest
+
+      required:
+
+      - status
+
+      type: object
+
+      properties:
+
+        status:
+
+          type: string
+
+      example:
+
+        status: seen
+
+  securitySchemes:
+
+    httpBearer:
+
+      type: http
+
+      scheme: bearer
+
+security:
+
+- httpBearer: []
+
+tags:
+
+- name: Misc
+
+  description: ''
+
+- name: Authentication
+
+  description: ''
+
+- name: Jobs
+
+  description: ''

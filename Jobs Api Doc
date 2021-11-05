@@ -170,7 +170,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{jobV1}}/api/v1/job/6184fd20f08e5448bc086114",
+					"raw": "{{jobV1}}/api/v1/job/6184fc8dceee744a00afa5c3",
 					"host": [
 						"{{jobV1}}"
 					],
@@ -178,7 +178,7 @@
 						"api",
 						"v1",
 						"job",
-						"6184fd20f08e5448bc086114"
+						"6184fc8dceee744a00afa5c3"
 					]
 				}
 			},
@@ -199,8 +199,12 @@
 				},
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{jobV1}}/api/v1/job/6184fc6bb1f3cf0840a50cae",
+					"raw": "{{jobV1}}/api/v1/job/6184fc8dceee744a00afa5c3",
 					"host": [
 						"{{jobV1}}"
 					],
@@ -208,7 +212,7 @@
 						"api",
 						"v1",
 						"job",
-						"6184fc6bb1f3cf0840a50cae"
+						"6184fc8dceee744a00afa5c3"
 					]
 				}
 			},
@@ -230,7 +234,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{jobV1}}/api/v1/job/6184fd20f08e5448bc086114",
+					"raw": "{{jobV1}}/api/v1/job/6184fc8dceee744a00afa5c3",
 					"host": [
 						"{{jobV1}}"
 					],
@@ -238,7 +242,7 @@
 						"api",
 						"v1",
 						"job",
-						"6184fd20f08e5448bc086114"
+						"6184fc8dceee744a00afa5c3"
 					]
 				}
 			},
