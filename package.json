@@ -1,10 +1,14 @@
 {
   "name": "06-jobs-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash\r npm install && npm start\r ```",
   "main": "app.js",
   "scripts": {
-    "nodemon": "nodemon app.js"
+    "nodemon": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "author": "",
   "license": "ISC",
@@ -27,5 +31,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesohailjafri/jobs-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thesohailjafri/jobs-api/issues"
+  },
+  "homepage": "https://github.com/thesohailjafri/jobs-api#readme"
 }
